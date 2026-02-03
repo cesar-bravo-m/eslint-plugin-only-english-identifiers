@@ -46,3 +46,6 @@ build/
 
 # Optional eslint cache
 .eslintcache
+
+# Uncompressed database (decompressed during tests)
+scowl.db
