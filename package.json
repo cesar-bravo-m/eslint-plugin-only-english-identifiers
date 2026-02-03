@@ -40,15 +40,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cesar-bravo-m/only-english-identifiers.git"
+    "url": "git+https://github.com/cesar-bravo-m/eslint-plugin-only-english-identifiers"
   },
   "bugs": {
-    "url": "https://github.com/cesar-bravo-m/only-english-identifiers/issues"
+    "url": "https://github.com/cesar-bravo-m/eslint-plugin-only-english-identifiers"
   },
-  "homepage": "https://github.com/cesar-bravo-m/only-english-identifiers#readme",
+  "homepage": "https://github.com/cesar-bravo-m/eslint-plugin-only-english-identifiers#readme",
   "files": [
     "src/",
-    "scowl.db",
+    "scripts/",
+    "scowl.db.gz",
     "README.md",
     "LICENSE",
     "CHANGELOG.md"
