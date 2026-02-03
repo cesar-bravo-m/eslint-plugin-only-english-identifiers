@@ -2,7 +2,7 @@
 
 const Database = require("better-sqlite3");
 
-const db = new Database("scowl.db", { readonly: true, fileMustExist: true });
+const db = new Database(__dirname + "/scowl.db", { readonly: true, fileMustExist: true });
 db.pragma("journal_mode = OFF");
 db.pragma("synchronous = OFF");
 db.pragma("temp_store = MEMORY");
