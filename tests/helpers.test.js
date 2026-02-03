@@ -40,6 +40,9 @@ function splitIdentifier(name) {
 }
 
 function isEnglishWord(word) {
+  if (word.length <= 3) {
+    return true
+  }
   return stmt.get(word) !== undefined;
 }
 
