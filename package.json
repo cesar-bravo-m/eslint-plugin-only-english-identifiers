@@ -1,0 +1,64 @@
+{
+  "name": "eslint-plugin-only-english-identifiers",
+  "version": "1.0.0",
+  "description": "ESLint plugin that enforces English-only identifier names for better code consistency",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:unit": "jest tests/only-english-identifiers.test.js tests/helpers.test.js",
+    "test:performance": "jest tests/performance.test.js",
+    "test:verbose": "jest --verbose",
+    "prepublishOnly": "npm test"
+  },
+  "keywords": [
+    "eslint",
+    "eslint-plugin",
+    "eslintplugin",
+    "english",
+    "identifiers",
+    "naming",
+    "code-quality",
+    "linting",
+    "i18n",
+    "language",
+    "validation",
+    "dictionary",
+    "scowl"
+  ],
+  "author": "cesar-bravo-m",
+  "license": "ISC",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "peerDependencies": {
+    "eslint": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cesar-bravo-m/only-english-identifiers.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cesar-bravo-m/only-english-identifiers/issues"
+  },
+  "homepage": "https://github.com/cesar-bravo-m/only-english-identifiers#readme",
+  "files": [
+    "src/",
+    "scowl.db",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "devDependencies": {
+    "@eslint/compat": "^2.0.2",
+    "@eslint/js": "^9.39.2",
+    "eslint": "^9.39.2",
+    "eslint-doc-generator": "^3.0.2",
+    "jest": "^30.2.0"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.6.2"
+  }
+}
