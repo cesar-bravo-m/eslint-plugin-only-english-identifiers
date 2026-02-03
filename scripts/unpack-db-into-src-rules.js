@@ -7,6 +7,7 @@ if (!fs.existsSync("scowl.db")) {
     .pipe(zlib.createGunzip())
     .pipe(fs.createWriteStream("scowl.db"))
     .on("finish", () => {
+      fs.rename('scowl.db', 'src/rules/scowl.db', () => {})
       console.log("Database decompressed successfully");
     })
     .on("error", (err) => {
@@ -14,5 +15,6 @@ if (!fs.existsSync("scowl.db")) {
       process.exit(1);
     });
 } else {
+  fs.rename('scowl.db', 'src/rules/scowl.db', () => {})
   console.log("Database already decompressed");
 }

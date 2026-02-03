@@ -13,7 +13,7 @@
     "pretest": "node scripts/unpack-db.js",
     "posttest": "node scripts/cleanup-db.js",
     "prepublishOnly": "npm test",
-    "postinstall": "node scripts/unpack-db.js"
+    "postinstall": "node scripts/unpack-db-into-src-rules.js"
   },
   "keywords": [
     "eslint",
