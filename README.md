@@ -1,6 +1,6 @@
 # eslint-plugin-only-english-identifiers
 
-An ESLint plugin that enforces English-only identifier names (variables, functions and object properties) in JavaScript/TypeScript code.
+An ESLint plugin that enforces English-only names for variables, functions and object properties.
 
 ## Installation
 
@@ -28,7 +28,7 @@ export default [
 
 ## Caveats
 
-Variables should be written in camelCase, snake_case, PascalCase or kebab-case. Something like "myvariable" will not be recognized as English, but "myVariable" will. Consider this a spell-check of sorts.
+Identifiers should be written in camelCase, snake_case, PascalCase or kebab-case. Something like "myvariable" will not be recognized as English, but "myVariable" will. Consider this a spell check.
 
 ## Example
 
