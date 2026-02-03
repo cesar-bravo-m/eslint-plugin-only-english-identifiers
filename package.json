@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-only-english-identifiers",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "ESLint plugin that enforces English-only identifier names for better code consistency",
   "main": "src/index.js",
   "scripts": {
@@ -12,7 +12,8 @@
     "test:verbose": "jest --verbose",
     "pretest": "node scripts/unpack-db.js",
     "posttest": "node scripts/cleanup-db.js",
-    "prepublishOnly": "npm test"
+    "prepublishOnly": "npm test",
+    "postinstall": "node scripts/unpack-db.js"
   },
   "keywords": [
     "eslint",
