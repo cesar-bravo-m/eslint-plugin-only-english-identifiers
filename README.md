@@ -20,15 +20,38 @@ export default [
       'english': onlyEnglishIdentifiers
     },
     rules: {
-      'english/only-english-identifiers': 'error'
+      'english/only-english-identifiers': 'warn' // 'off' | 'warn' | 'error'
     }
   }
 ];
 ```
 
+```bash
+npm run lint
+```
+
+## Configuration
+
+An identifier whitelist can be added in eslint.config.js, like this:
+```javascript
+  // eslint.config.js
+  module.exports = [
+    rules: {
+      'english/only-english-identifiers': ["warn", {whitelist: ['nombre']}]
+    },
+  ]
+```
+
+If you can't modify the ESLint config, you can always disable the rule for a specific file or line:
+
+```javascript
+// eslint-disable-next-line english/only-english-identifiers
+const nombre = 'test';
+```
+
 ## Caveats
 
-Identifiers should be written in camelCase, snake_case, PascalCase or kebab-case. Something like "myvariable" will not be recognized as English, but "myVariable" will. Consider this a spell check.
+Identifiers are expected to be written in camelCase, snake_case, PascalCase or kebab-case. A name like "myvariable" won't be read as English, but "myVariable" will. Think of it as a bonus spell check.
 
 ## Example
 
@@ -43,18 +66,7 @@ const nombre = 'Juan';  // Error: 'nombre' is not English
 
 ## Dictionary
 
-This plugin uses [SCOWL (Spell Checker Oriented Word Lists)](http://wordlist.aspell.net/) by Kevin Atkinson, a comprehensive English dictionary that includes common words, technical terms, and both American and British spellings.
-
-## Configuration
-
-The rule has no configuration options. Use `'error'`, `'warn'`, or `'off'`.
-
-To disable for specific lines:
-
-```javascript
-// eslint-disable-next-line english/only-english-identifiers
-const nombre = 'test';
-```
+This plugin ships a modified version of [SCOWL (Spell Checker Oriented Word Lists)](http://wordlist.aspell.net/) by Kevin Atkinson, a comprehensive English dictionary that includes common words, technical terms, and both American and British spellings.
 
 ## License
 

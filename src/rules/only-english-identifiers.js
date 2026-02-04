@@ -17,16 +17,20 @@ const stmt = db.prepare("SELECT 1 FROM english_words WHERE word = ? COLLATE NOCA
 const cache = new Map();
 
 const RE_CAMEL = /([a-z])([A-Z])/g;
+const RE_ACRONYM = /([A-Z]+)([A-Z][a-z])/g; // For stuff like "HTMLElement" to be parsed as "HTML" + "Element"
 const RE_SEP = /[_-]/g;
 const RE_ALL_LOWER = /^[a-z]+$/;
 const RE_HAS_ALPHA = /[A-Za-z]/;
 
 function splitIdentifier(name) {
   if (RE_ALL_LOWER.test(name)) return [name];
+
   const s = name
+    .replace(RE_ACRONYM, "$1 $2")
     .replace(RE_CAMEL, "$1 $2")
     .replace(RE_SEP, " ")
     .toLowerCase();
+
   const out = [];
   let start = 0;
   for (let i = 0; i <= s.length; i++) {
@@ -55,15 +59,26 @@ module.exports = {
       description: "Disallow identifier names not written in English",
       recommended: false,
     },
-    schema: [],
+    schema: [
+      {
+        type: 'object',
+        properties: {
+          whitelist: { type: 'array', items: { type: 'string' } },
+        },
+        additionalProperties: false
+      }
+    ],
     messages: {
       nonEnglish: "Avoid using non-English words in identifiers",
     },
   },
 
   create(context) {
+    const options = context.options[0] || {};
+    const whitelist  = new Set(options.whitelist ?? []);
     function checkName(node, name) {
       if (!RE_HAS_ALPHA.test(name)) return;
+      if (whitelist.has(name)) return;
       const parts = splitIdentifier(name);
       for (let i = 0; i < parts.length; i++) {
         const w = parts[i];

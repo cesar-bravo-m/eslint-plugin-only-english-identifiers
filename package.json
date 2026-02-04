@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-only-english-identifiers",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "ESLint plugin that enforces English-only identifier names for better code consistency",
   "main": "src/index.js",
   "scripts": {
@@ -11,7 +11,6 @@
     "test:performance": "jest tests/performance.test.js",
     "test:verbose": "jest --verbose",
     "pretest": "node scripts/unpack-db.js",
-    "posttest": "node scripts/cleanup-db.js",
     "prepublishOnly": "npm test",
     "postinstall": "node scripts/unpack-db-into-src-rules.js"
   },
@@ -53,7 +52,8 @@
     "scowl.db.gz",
     "README.md",
     "LICENSE",
-    "CHANGELOG.md"
+    "CHANGELOG.md",
+    "SCOWL-LICENSE.txt"
   ],
   "devDependencies": {
     "@eslint/compat": "^2.0.2",

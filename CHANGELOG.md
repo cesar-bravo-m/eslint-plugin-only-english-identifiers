@@ -16,7 +16,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Case-insensitive English word matching
 - Small performance impact on linting
 
-### Documentation
-- README file
+## [1.0.5] - 2026-02-04
+
+### Added
+- Configurable whitelist
+- Identifier names that start with acronyms are now properly handled (e.g. HTMLElement passes the lint test)
 
 [1.0.0]: https://github.com/cesar-bravo-m/only-english-identifiers/releases/tag/v1.0.0

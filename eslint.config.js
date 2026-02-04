@@ -8,7 +8,7 @@ module.exports = [
       "my-rules": myPlugin,
     },
     rules: {
-      "my-rules/only-english-identifiers": "warn",
+      "my-rules/only-english-identifiers": ["warn", {whitelist: ['nombre']}]
     },
   },
 ];
