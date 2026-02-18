@@ -4,7 +4,7 @@ An ESLint plugin that enforces English-only names for variables, functions and o
 
 This project is part of the **ESLTools** suite of utilities for developers who are non-native English speakers. See also:
 
-- **[windows-live-cc](https://github.com/cesar-bravo-m/windows-live-cc)** — A transcription and translation utility for Windows, useful for watching English-language training material.
+- **[windows-live-cc](https://github.com/cesar-bravo-m/windows-live-cc)** — A transcription and translation utility for Windows, useful for watching training material in English.
 
 ## Installation
 
